@@ -1,36 +1,24 @@
 
 var first_user_id=1;
-function follow(){
-    
+
+function follow(){   
     var xhttp = new XMLHttpRequest();
 
     xhttp.open("POST", "https://z-p3.www.instagram.com/web/friendships/"+first_user_id+"/follow/", true);
     xhttp.withCredentials = true;
    
-    xhttp.setRequestHeader("x-csrftoken","55l0I6nvtJmA99Yc204SNGEGLC0n5eOs");
-    
-
+    xhttp.setRequestHeader("x-csrftoken","55l0I6nvtJmA99Yc204SNGEGLC0n5eOs");//değişecek oturuma göre ;
     xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-          
-          
-           console.log("Toplamda: "+first_user_id+" Ki�iye istek at�ld�...");
- 
-
+        if (this.readyState == 4 && this.status == 200) {  
+           console.log("Toplamda: "+first_user_id+" Kiþiye istek atýldý...");
         }else{
-       
-
-
+ 
         }
-
-       
 
      };
 
     first_user_id++;
     xhttp.send();
-   
-
 }
 setInterval(follow,3000);
     
